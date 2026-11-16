@@ -9,13 +9,24 @@
 <%=request.getAttribute("pageTitle")==null?"Smart Wardrobe":request.getAttribute("pageTitle")%>
 </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css?v=11">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css?v=14">
 </head>
 <body>
 <div class="app-shell">
 <aside class="sidebar">
 <a class="logo" href="<%=request.getContextPath()%>/dashboard">SW<span> / </span>
 </a>
+<button class="mobile-menu-toggle" type="button"
+        aria-label="Open profile and navigation options"
+        aria-haspopup="true" aria-expanded="false"
+        aria-controls="primary-navigation">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+     stroke-width="1.8" width="22" height="22" aria-hidden="true">
+<circle cx="12" cy="8" r="3.5"></circle>
+<path d="M5 20a7 7 0 0 1 14 0"></path>
+</svg>
+</button>
+<nav class="sidebar-nav" id="primary-navigation" aria-label="Primary navigation">
 <div class="side-label">Workspace</div>
 <a href="<%=request.getContextPath()%>/dashboard">
 <span>Dashboard</span>
@@ -46,6 +57,7 @@
 <span>Logout</span>
 </a>
 </div>
+</nav>
 </aside>
 <main class="content">
 <div class="topbar">

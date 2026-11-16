@@ -3,10 +3,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create Account - Smart Wardrobe</title>
 
     <link rel="stylesheet"
-          href="<%= request.getContextPath() %>/css/style.css?v=12">
+          href="<%= request.getContextPath() %>/css/style.css?v=14">
 </head>
 
 <body class="auth-bg">
