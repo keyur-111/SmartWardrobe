@@ -27,8 +27,7 @@ Database: `smart_wardrobe` on `localhost:3306` (default user `root`, empty passw
 
 ## Links
 
-- GitHub: [keyur-111/SmartWardrobe](https://github.com/keyur-111/SmartWardrobe)
-- Live application: [Smart Wardrobe](https://smartwardrobe-production.up.railway.app/SmartWardrobe/login.jsp)
+- Live application: [Smart Wardrobe](https://smartwardrobe.up.railway.app/SmartWardrobe/login.jsp)
 
 ## Evaluation account
 
