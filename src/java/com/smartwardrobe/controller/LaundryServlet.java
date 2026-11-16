@@ -33,10 +33,10 @@ import javax.servlet.http.*;
             return;
         }
         try {
-            if("complete".equals(r.getParameter("action")))ls.complete(Integer.parseInt(r.getParameter("id")),u);
+            if("complete".equals(r.getParameter("action")))ls.complete(parseInt(r.getParameter("id")),u);
             else {
                 Laundry x=new Laundry();
-                x.setClothingId(Integer.parseInt(r.getParameter("clothingId")));
+                x.setClothingId(parseInt(r.getParameter("clothingId")));
                 if(cs.find(x.getClothingId(),u)==null) {
                     throw new ServletException("The selected item does not belong to this account.");
                 }
@@ -52,6 +52,12 @@ import javax.servlet.http.*;
             throw new ServletException(e);
         }
 
+    }
+    private int parseInt(String value) {
+        if(value==null||value.trim().isEmpty()) {
+            throw new IllegalArgumentException("Required number is missing.");
+        }
+        return Integer.parseInt(value.trim());
     }
 
 }
