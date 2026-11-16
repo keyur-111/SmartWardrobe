@@ -20,5 +20,11 @@ public class UserService {
     public boolean delete(int id)throws SQLException {
         return dao.delete(id);
     }
+    public boolean updateIdentity(int id,String name,String email)throws SQLException {
+        return dao.updateIdentity(id,name,email);
+    }
+    public boolean updateAdminPassword(int id,String password)throws SQLException {
+        return dao.updateAdminPassword(id,password);
+    }
 
 }

@@ -32,7 +32,7 @@ Database: `smart_wardrobe` on `localhost:3306` (default user `root`, empty passw
 
 ## Evaluation account
 
-- Email: `evaluator@smartwardrobe.com`
+- Email: `demouser@gmail.com`
 - Password: `WardrobeDemo2026!`
 
 This is a shared regular-user account with sample wardrobe data. It is not an administrator account, and its data may be changed by visitors.

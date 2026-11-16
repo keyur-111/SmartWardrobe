@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS outfit_items (
 );
 
 INSERT INTO users(user_id,name,email,password,role) VALUES
-(1,'Smart Wardrobe Admin','admin@smartwardrobe.com','240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9','ADMIN'),
-(2,'Evaluation User','evaluator@smartwardrobe.com','3dbc1903fbcc50ec1624c986ebb68dc251fd982df5a6a560b76156987653cb73','USER')
-ON DUPLICATE KEY UPDATE name=VALUES(name), password=VALUES(password), role=VALUES(role);
+(1,'Smart Wardrobe Admin','admin@smartwardrobe.com','a2ebfb46dd26809c444e50585d07315485482e256f6f74e4a4690b9112a7567d','ADMIN'),
+(2,'Demo User','demouser@gmail.com','3dbc1903fbcc50ec1624c986ebb68dc251fd982df5a6a560b76156987653cb73','USER')
+ON DUPLICATE KEY UPDATE name=VALUES(name), email=VALUES(email), password=VALUES(password), role=VALUES(role);
 
 INSERT INTO categories(category_id,category_name,description) VALUES
 (1,'Tops','T-shirts and shirts'),

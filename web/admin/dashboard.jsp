@@ -37,39 +37,55 @@
 <h3>User management</h3>
 </div>
 </div>
+<%if(request.getParameter("updated")!=null){%>
+<div class="alert success">Account changes saved.</div>
+<%}%>
 <div class="table-wrap">
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Email</th>
+<th>User account</th>
 <th>Role</th>
-<th>
-</th>
+<th>Actions</th>
 </tr>
 </thead>
 <tbody>
 <%for(Object o:(java.util.List)request.getAttribute("users")){com.smartwardrobe.model.User u=(com.smartwardrobe.model.User)o;%>
 <tr>
 <td>
+<%if(!"ADMIN".equals(u.getRole())){%>
+<form method="post" class="admin-user-edit">
+<input type="hidden" name="action" value="updateUser">
+<input type="hidden" name="csrfToken" value="<%=request.getAttribute("csrfToken")%>">
+<input type="hidden" name="id" value="<%=u.getUserId()%>">
+<div class="field">
+<label>Name</label>
+<input name="name" value="<%=com.smartwardrobe.util.WebUtil.html(u.getName())%>" maxlength="100" required>
+</div>
+<div class="field">
+<label>Email</label>
+<input type="email" name="email" value="<%=com.smartwardrobe.util.WebUtil.html(u.getEmail())%>" maxlength="100" required>
+</div>
+<button class="btn small primary">Save</button>
+</form>
+<%}else{%>
 <b>
-<%=u.getName()%>
+<%=com.smartwardrobe.util.WebUtil.html(u.getName())%>
 </b>
-</td>
-<td>
-<%=u.getEmail()%>
+<br><%=com.smartwardrobe.util.WebUtil.html(u.getEmail())%>
+<%}%>
 </td>
 <td>
 <span class="pill">
-<%=u.getRole()%>
+<%=com.smartwardrobe.util.WebUtil.html(u.getRole())%>
 </span>
 </td>
 <td>
 <%if(!"ADMIN".equals(u.getRole())){%>
 <form method="post" onsubmit="return confirm('Delete this user and their wardrobe?')">
 <input type="hidden" name="action" value="deleteUser">
-<input type="hidden" name="id" value="<%=u.getUserId()%>
-">
+<input type="hidden" name="csrfToken" value="<%=request.getAttribute("csrfToken")%>">
+<input type="hidden" name="id" value="<%=u.getUserId()%>">
 <button class="btn small danger-btn">Delete</button>
 </form>
 <%}%>
@@ -79,5 +95,29 @@
 </tbody>
 </table>
 </div>
+</div>
+<div class="panel">
+<div class="panel-head">
+<div>
+<span class="eyebrow">ADMIN ACCOUNT</span>
+<h3>Change admin password</h3>
+</div>
+</div>
+<p class="muted">Use a unique password with at least 16 characters. It will not be published in the README.</p>
+<form method="post" class="form-grid">
+<input type="hidden" name="action" value="changeAdminPassword">
+<input type="hidden" name="csrfToken" value="<%=request.getAttribute("csrfToken")%>">
+<div class="field">
+<label>New password</label>
+<input type="password" name="newPassword" minlength="16" autocomplete="new-password" required>
+</div>
+<div class="field">
+<label>Confirm password</label>
+<input type="password" name="confirmPassword" minlength="16" autocomplete="new-password" required>
+</div>
+<div class="field full">
+<button class="btn primary">Update admin password</button>
+</div>
+</form>
 </div>
 <%@ include file="/WEB-INF/jsp-footer.jsp" %>

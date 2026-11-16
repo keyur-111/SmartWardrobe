@@ -53,6 +53,23 @@ public class UserDAO {
         }
         return a;
     }
+    public boolean updateIdentity(int id,String name,String email)throws SQLException {
+        try(Connection c=DBConnection.getConnection();
+        PreparedStatement p=c.prepareStatement("UPDATE users SET name=?,email=? WHERE user_id=? AND role='USER'")) {
+            p.setString(1,name);
+            p.setString(2,email);
+            p.setInt(3,id);
+            return p.executeUpdate()>0;
+        }
+    }
+    public boolean updateAdminPassword(int id,String password)throws SQLException {
+        try(Connection c=DBConnection.getConnection();
+        PreparedStatement p=c.prepareStatement("UPDATE users SET password=? WHERE user_id=? AND role='ADMIN'")) {
+            p.setString(1,PasswordUtil.hash(password));
+            p.setInt(2,id);
+            return p.executeUpdate()>0;
+        }
+    }
     public boolean delete(int id)throws SQLException {
         try(Connection c=DBConnection.getConnection();
         PreparedStatement p=c.prepareStatement("DELETE FROM users WHERE user_id=?")) {

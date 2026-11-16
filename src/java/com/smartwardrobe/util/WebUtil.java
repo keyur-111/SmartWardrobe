@@ -16,5 +16,9 @@ public final class WebUtil {
     public static String safe(String value) {
         return value == null ? "" : value.trim();
     }
+    public static String html(String value) {
+        if(value==null)return "";
+        return value.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace("\"","&quot;").replace("'","&#39;");
+    }
 
 }
