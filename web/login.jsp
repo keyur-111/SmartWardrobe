@@ -28,7 +28,6 @@
 </form>
 <p class="center muted">New here? <a href="${pageContext.request.contextPath}/register">Create an account</a>
 </p>
-<p class="center small">Admin demo: admin@smartwardrobe.com / admin123</p>
 </div>
 </body>
 </html>

@@ -1,6 +1,4 @@
 -- Smart Wardrobe database setup + demo data
--- Demo user: demo@smartwardrobe.com / user123
--- Demo admin: admin@smartwardrobe.com / admin123
 
 CREATE DATABASE IF NOT EXISTS smart_wardrobe CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE smart_wardrobe;
