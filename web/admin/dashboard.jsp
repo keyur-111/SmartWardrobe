@@ -103,7 +103,7 @@
 <h3>Change admin password</h3>
 </div>
 </div>
-<p class="muted">Use a unique password with at least 16 characters. It will not be published in the README.</p>
+<p class="muted">Use a unique password with at least 16 characters.</p>
 <form method="post" class="form-grid">
 <input type="hidden" name="action" value="changeAdminPassword">
 <input type="hidden" name="csrfToken" value="<%=request.getAttribute("csrfToken")%>">
