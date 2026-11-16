@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS outfit_items (
 
 INSERT INTO users(user_id,name,email,password,role) VALUES
 (1,'Smart Wardrobe Admin','admin@smartwardrobe.com','240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9','ADMIN'),
-(2,'Demo User','demo@smartwardrobe.com','e606e38b0d8c19b24cf0ee3808183162ea7cd63ff7912dbb22b5e803286b4446','USER')
+(2,'Evaluation User','evaluator@smartwardrobe.com','3dbc1903fbcc50ec1624c986ebb68dc251fd982df5a6a560b76156987653cb73','USER')
 ON DUPLICATE KEY UPDATE name=VALUES(name), password=VALUES(password), role=VALUES(role);
 
 INSERT INTO categories(category_id,category_name,description) VALUES
@@ -75,7 +75,7 @@ INSERT INTO categories(category_id,category_name,description) VALUES
 (5,'Accessories','Belts and caps')
 ON DUPLICATE KEY UPDATE description=VALUES(description);
 
--- Demo wardrobe: all images are included in web/uploads/
+-- Evaluation wardrobe: all images are included in web/uploads/
 INSERT INTO clothing_items(clothing_id,user_id,category_id,name,color,fabric,season,occasion,image,status,usage_count) VALUES
 (1,2,1,'White T-Shirt','White','Cotton','All','Any','white-tshirt.png','Clean',2),
 (2,2,1,'Black Shirt','Black','Cotton','All','Formal','black-shirt.png','Clean',1),

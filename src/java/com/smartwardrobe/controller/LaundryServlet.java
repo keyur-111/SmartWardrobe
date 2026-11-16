@@ -28,11 +28,18 @@ import javax.servlet.http.*;
     }
     protected void doPost(HttpServletRequest r,HttpServletResponse s)throws ServletException,IOException {
         Integer u=WebUtil.userId(r);
+        if(u==null) {
+            s.sendRedirect(r.getContextPath()+"/login");
+            return;
+        }
         try {
             if("complete".equals(r.getParameter("action")))ls.complete(Integer.parseInt(r.getParameter("id")),u);
             else {
                 Laundry x=new Laundry();
                 x.setClothingId(Integer.parseInt(r.getParameter("clothingId")));
+                if(cs.find(x.getClothingId(),u)==null) {
+                    throw new ServletException("The selected item does not belong to this account.");
+                }
                 x.setLaundryDate(LocalDate.now().toString());
                 x.setReturnDate("");
                 x.setStatus("In Laundry");

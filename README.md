@@ -1,13 +1,12 @@
 # Smart Wardrobe
 
-A Java web application for managing clothing, tracking laundry, and planning outfits.
+Smart Wardrobe is a Java web application for managing clothing, tracking laundry, and planning outfits.
 
-## Technologies
+## Technologies and tools
 
-- Java Servlets and JSP
-- MySQL with JDBC
+- Java Servlets and JSP, MySQL with JDBC
 - HTML, CSS, and JavaScript
-- Apache Tomcat, Ant, and NetBeans
+- Apache Tomcat, Apache Ant, NetBeans
 
 ## Features
 
@@ -15,21 +14,25 @@ A Java web application for managing clothing, tracking laundry, and planning out
 - Wardrobe, laundry, and outfit management
 - Admin dashboard and category management
 
-## Run locally
+## Installation and execution
 
-Requirements: JDK 8 or later, MySQL, Apache Tomcat, and Ant.
+Requirements: JDK 8+, MySQL, Apache Tomcat, and Apache Ant.
 
-1. Import the database: `mysql -u root < database.sql`
-2. Build the application: `ant -f build.xml dist`
-3. Copy `dist\SmartWardrobe.war` into Tomcat's `webapps` folder and start Tomcat.
+1. Import `database.sql` into MySQL: `mysql -u root < database.sql`
+2. Build: `ant -f build.xml dist`
+3. Copy `dist\SmartWardrobe.war` to Tomcat's `webapps` folder and start Tomcat.
 4. Open `http://localhost:8080/SmartWardrobe/`.
 
-The default database is `smart_wardrobe` on `localhost:3306` using `root` with an empty password. Set `SMARTWARDROBE_DB_URL`, `SMARTWARDROBE_DB_USER`, and `SMARTWARDROBE_DB_PASSWORD` to use another database.
+Database: `smart_wardrobe` on `localhost:3306` (default user `root`, empty password). Configure another database with `SMARTWARDROBE_DB_URL`, `SMARTWARDROBE_DB_USER`, and `SMARTWARDROBE_DB_PASSWORD`.
 
-## Live application
+## Links
 
-[Open Smart Wardrobe](https://smartwardrobe-production.up.railway.app/SmartWardrobe/login.jsp)
+- GitHub: [keyur-111/SmartWardrobe](https://github.com/keyur-111/SmartWardrobe)
+- Live application: [Smart Wardrobe](https://smartwardrobe-production.up.railway.app/SmartWardrobe/login.jsp)
 
-Evaluation login credentials are shared separately. Do not publish production passwords in this public repository.
+## Evaluation account
 
-Screenshots are available in the [`screenshots`](screenshots/) folder.
+- Email: `evaluator@smartwardrobe.com`
+- Password: `WardrobeDemo2026!`
+
+This is a shared regular-user account with sample wardrobe data. It is not an administrator account, and its data may be changed by visitors.

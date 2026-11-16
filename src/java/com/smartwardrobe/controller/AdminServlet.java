@@ -26,8 +26,18 @@ import javax.servlet.http.*;
 
     }
     protected void doPost(HttpServletRequest r,HttpServletResponse s)throws ServletException,IOException {
+        if(!WebUtil.admin(r)) {
+            s.sendRedirect(r.getContextPath()+"/login");
+            return;
+        }
         try {
-            if("deleteUser".equals(r.getParameter("action")))us.delete(Integer.parseInt(r.getParameter("id")));
+            if("deleteUser".equals(r.getParameter("action"))) {
+                String id=r.getParameter("id");
+                if(id==null||id.trim().isEmpty()) {
+                    throw new ServletException("User ID is missing.");
+                }
+                us.delete(Integer.parseInt(id.trim()));
+            }
             s.sendRedirect(r.getContextPath()+"/admin");
         }
         catch(Exception e) {

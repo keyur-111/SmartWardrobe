@@ -200,6 +200,13 @@ public class OutfitServlet extends HttpServlet {
                 }
 
                 if (ids.size() >= 3) {
+                    for (Integer id : ids) {
+                        if (cs.find(id, u) == null) {
+                            throw new ServletException(
+                                    "An outfit can only include your own wardrobe items."
+                            );
+                        }
+                    }
 
                     Outfit o =
                             new Outfit();
