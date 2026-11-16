@@ -13,13 +13,10 @@
 </div>
 </div>
 <form method="post" enctype="multipart/form-data" action="<%=request.getContextPath()%>/wardrobe" class="form-grid">
-<input type="hidden" name="action" value="<%=edit?"update":"create"%>
-">
+<input type="hidden" name="action" value="<%=edit?"update":"create"%>">
 <%if(edit){%>
-<input type="hidden" name="id" value="<%=item.getClothingId()%>
-">
-<input type="hidden" name="existingImage" value="<%=item.getImage()==null?"":item.getImage()%>
-">
+<input type="hidden" name="id" value="<%=item.getClothingId()%>">
+<input type="hidden" name="existingImage" value="<%=item.getImage()==null?"":item.getImage()%>">
 <%}%>
 <div class="field full">
 <label>Clothing name</label>
