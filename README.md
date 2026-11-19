@@ -155,7 +155,7 @@ The configured session timeout is 30 minutes. The shared evaluation account is a
 ## Links
 
 - GitHub repository: [keyur-111/SmartWardrobe](https://github.com/keyur-111/SmartWardrobe)
-- Deployed application: [Smart Wardrobe sign-in](https://smartwardrobe.up.railway.app/SmartWardrobe)
+- Deployed application: [Smart Wardrobe](https://smartwardrobe.up.railway.app/SmartWardrobe)
 
 ## Troubleshooting
 
